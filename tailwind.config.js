@@ -8,6 +8,10 @@ export default {
         secondary: "#9F01FF",
         dark: "#080016",
       },
+      screens: {
+        "max-md": { max: "1400px" },
+        "b-point": { max: "1250px" },
+      },
     },
   },
   plugins: [],

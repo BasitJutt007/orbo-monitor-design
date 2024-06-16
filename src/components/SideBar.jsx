@@ -3,7 +3,7 @@ import { Pill, Goal, Moon, Frame, Discord } from "../assets/images/index";
 
 const Sidebar = () => {
   return (
-    <div className="fixed left-0 top-0 h-[100vh] w-72 bg-[#090117]  flex flex-col justify-between">
+    <div className="fixed left-0 top-0 h-[100vh] w-72 bg-[#090117]  flex flex-col justify-between border-r border-gray-800">
       {/* Upper Part */}
       <div>
         <div className=" flex flex-row items-baseline cursor-pointer mt-24 mx-4">

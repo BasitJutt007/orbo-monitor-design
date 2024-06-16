@@ -216,8 +216,8 @@ const HomeScreen = () => {
           </div>
         </div>
         {/* Cards */}
-        <div class="flex absolute right-20 top-44 space-x-6">
-          <div class="h-36 w-64 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
+        <div class="flex absolute right-20 max-md:right-5 b-point:right-2 top-44 space-x-6">
+          <div class="h-36 w-64 b-point:h-34 b-point:w-60 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
             <p className="text-sm pl-5 mt-5 text-white">Amount of Tokens</p>
             <div className="flex flex-row">
               <p className=" text-3xl ml-5 mt-2  text-white">1.2k</p>
@@ -228,7 +228,7 @@ const HomeScreen = () => {
               <SplineChart />
             </div>
           </div>
-          <div class="h-36 w-64 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
+          <div class="h-36 w-64 b-point:h-34 b-point:w-60 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
             <p className="text-sm pl-5 mt-5 text-white">Relay Speed</p>
             <div className="flex flex-row">
               <p className=" text-3xl ml-5 mt-2  text-white">0.9 Sec</p>
