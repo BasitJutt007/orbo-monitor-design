@@ -147,7 +147,7 @@ const HomeScreen = ({ isCollapsed, setIsCollapsed, isOverlay }) => {
       {/* Table Section  */}
       <section
         className={`${
-          isCollapsed || isOverlay ? "ml-10" : "ml-72"
+          isCollapsed || isOverlay ? "ml-20" : "ml-72"
         } mt-14 text-white `}
       >
         <div className="flex flex-row items-center">
