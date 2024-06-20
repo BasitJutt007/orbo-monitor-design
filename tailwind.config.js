@@ -11,6 +11,8 @@ export default {
       screens: {
         "max-md": { max: "1400px" },
         "b-point": { max: "1250px" },
+        "f-point": { min: "1470px" },
+        "c-point": { max: "1300px" },
       },
     },
   },

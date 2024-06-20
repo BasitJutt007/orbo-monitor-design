@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const SplineChart = () => {
+const RelayChart = () => {
   const options = {
     chart: {
       toolbar: { show: false },
@@ -11,7 +11,7 @@ const SplineChart = () => {
       },
     },
     fill: {
-      colors: ["#50C878"],
+      colors: ["#005b96"],
       gradient: { opacityFrom: 0.5, opacityTo: 0, shade: "dark" },
     },
     grid: { show: false },
@@ -21,7 +21,7 @@ const SplineChart = () => {
     stroke: {
       curve: "smooth",
       width: 1,
-      colors: ["#50C878"],
+      colors: ["#005b96"],
     },
     labels: [0, 1, 2, 3, 4, 6, 7, 8, 9],
     xaxis: {
@@ -40,7 +40,7 @@ const SplineChart = () => {
 
   const series = [
     {
-      name: "Amount of Token",
+      name: "Relay Speed",
       data: [5.2, 6, 5.2, 6, 5.5, 6, 5.5, 6, 5.2, 6],
     },
   ];
@@ -54,4 +54,4 @@ const SplineChart = () => {
   );
 };
 
-export default SplineChart;
+export default RelayChart;

@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 input[name="metadata"]:checked ~ label .custom-checkbox {
     @apply bg-gradient-to-b from-secondary/80 to-primary/80;
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import SplineChart from "../components/SplineChart";
+import RelayChart from "../components/RelayChart";
 import {
   Bull,
   Copy,
@@ -17,115 +18,17 @@ import {
   ChevronUpIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import data from "../../data";
 
-const HomeScreen = () => {
-  const data = [
-    {
-      id: 1,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 2,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 3,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 4,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 5,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 6,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 7,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 8,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 9,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-    {
-      id: 10,
-      name: "Ahmed",
-      tokenAddress: "Token Address",
-      devBuy: "Dev Buy",
-      sol: "1 SOL",
-      mcap: "$4,119.478",
-      condingCurve: "75%",
-      timeAgo: "2 Sec Ago",
-    },
-  ];
-
+const HomeScreen = ({ isCollapsed, setIsCollapsed, isOverlay }) => {
   return (
     // ml-72 mt-20
     <>
-      <section className="ml-72 mt-14  bg-gradient-to-r from-purple-700 to-purple-950">
+      <section
+        className={`  ${
+          isCollapsed || isOverlay ? "ml-20" : "ml-72"
+        } mt-14  bg-gradient-to-r from-purple-700 to-purple-950`}
+      >
         <div className="flex flex-row justify-between pt-7 px-20">
           <h1 className="text-xl font-bold text-white">
             Welcome Back, 👋 Jack
@@ -217,32 +120,36 @@ const HomeScreen = () => {
         </div>
         {/* Cards */}
         <div class="flex absolute right-20 max-md:right-5 b-point:right-2 top-44 space-x-6">
-          <div class="h-36 w-64 b-point:h-34 b-point:w-60 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
+          <div class="h-36 w-64 b-point:h-34 b-point:w-60 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-lg">
             <p className="text-sm pl-5 mt-5 text-white">Amount of Tokens</p>
             <div className="flex flex-row">
               <p className=" text-3xl ml-5 mt-2  text-white">1.2k</p>
               <p className=" text-sm ml-3 mt-2  text-[#42EBAE]">^ 2.2%</p>
             </div>
 
-            <div className=" absolute top-0">
+            <div className=" absolute top-24 z-50">
               <SplineChart />
             </div>
           </div>
-          <div class="h-36 w-64 b-point:h-34 b-point:w-60 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
+          <div class="h-36 w-64 b-point:h-34 b-point:w-60 rounded-xl bg-white/10 shadow-lg ring-1 ring-white/5 backdrop-blur-xl">
             <p className="text-sm pl-5 mt-5 text-white">Relay Speed</p>
             <div className="flex flex-row">
               <p className=" text-3xl ml-5 mt-2  text-white">0.9 Sec</p>
               <p className=" text-sm ml-3 mt-2  text-[#42EBAE]">^ 2.2%</p>
             </div>
 
-            <div className=" absolute top-0">
-              <SplineChart />
+            <div className=" absolute top-24  z-50">
+              <RelayChart />
             </div>
           </div>
         </div>
       </section>
       {/* Table Section  */}
-      <section className="ml-72 mt-14 text-white ">
+      <section
+        className={`${
+          isCollapsed || isOverlay ? "ml-10" : "ml-72"
+        } mt-14 text-white `}
+      >
         <div className="flex flex-row items-center">
           <h1 className="text-xl ml-20">Pump-Fun Monitors</h1>
           {/* Red Dot */}
@@ -254,81 +161,93 @@ const HomeScreen = () => {
         </div>
         <p className="ml-20 text-sm text-gray-500 mt-2">Newest</p>
 
-        <div className="bg-[#090117] flex flex-row w-[100%]">
+        <div className="bg-[#090117] flex flex-row justify-between w-[100%]">
           <div className="relative">
-            <div className=" mt-5 pb-2 ">
-              {data.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex relative flex-row items-center  ml-20 border border-gray-800 py-4 rounded-2xl text-xs mb-4"
-                >
-                  <img
-                    src={purpleBlob}
-                    alt="Logo"
-                    className="h-4 w-4 ml-4 mr-2 "
-                  />
-                  <span className="text-[11px]">{item.name}</span>
-                  <img src={Copy} alt="Logo" className="h-4 w-4 ml-4" />
-                  <span className="text-gray-500 mr-1 pl-1 text-[11px]">
-                    {item.tokenAddress}
-                  </span>
-                  <span className="text-gray-500 mr-1 pl-1 text-[11px]">
-                    {item.devBuy}
-                  </span>
-                  <span className="text-[#6366F1] text-[11px]">{item.sol}</span>
-                  <span className="text-gray-500 ml-5 mr-1 pl-1 text-[11px]">
-                    MCap
-                  </span>
-                  <span className="text-[#6366F1]">{item.mcap}</span>
-                  <span className="text-gray-500 mr-1 ml-5 pl-1 text-[11px]">
-                    Bonding Curve
-                  </span>
-                  <span className="text-[#6366F1]">{item.condingCurve}</span>
-                  <img
-                    src={Bull}
-                    alt="Bull"
-                    className="h-5 w-5 mr-1 ml-4 cursor-pointer"
-                  />
-                  <img
-                    src={Search}
-                    alt="Search"
-                    className="h-4 w-4 mr-1 cursor-pointer"
-                  />
-                  <img
-                    src={Pill}
-                    alt="Pill"
-                    className="h-4 w-4 mr-1  cursor-pointer"
-                  />
-                  <img
-                    src={Octo}
-                    alt="Octo"
-                    className="h-4 w-4 mr-1 cursor-pointer"
-                  />
-                  <img
-                    src={Globe}
-                    alt="Globe"
-                    className="h-4 w-4 mr-1 cursor-pointer"
-                  />
-                  <img
-                    src={Telegram}
-                    alt="Telegram"
-                    className="h-4 w-4 mr-1 cursor-pointer"
-                  />
-                  <img
-                    src={Twitter}
-                    alt="Twitter"
-                    className="h-4 w-4 mr-1 cursor-pointer"
-                  />
-                  <span className="text-xs font-light text-gray-500 ml-5 mr-5 ">
-                    {item.timeAgo}
-                  </span>
-                  <div className="absolute top-[95%] left-3 h-[3px] rounded-full w-[70%] bg-gradient-to-r from-fuchsia-600 to-blue-700"></div>
-                </div>
-              ))}
+            <div
+              className=" mt-5 pb-0 overflow-x-auto overflow-y-auto"
+              style={{ maxHeight: "100vh", minWidth: "80%" }}
+            >
+              <div className="flex flex-col ">
+                {data.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex relative flex-row items-center ml-20 border border-gray-800 py-4 rounded-2xl text-xs mb-4 min-w-max"
+                  >
+                    <img
+                      src={purpleBlob}
+                      alt="Logo"
+                      className="h-4 w-4 ml-4 mr-2"
+                    />
+                    <span className="text-[11px]">{item.name}</span>
+                    <img src={Copy} alt="Logo" className="h-4 w-4 ml-4" />
+                    <span className="text-gray-500 mr-1 pl-1 text-[11px]">
+                      {item.tokenAddress}
+                    </span>
+                    <span className="text-gray-500 mr-1 pl-1 text-[11px]">
+                      {item.devBuy}
+                    </span>
+                    <span className="text-[#6366F1] text-[11px]">
+                      {item.sol}
+                    </span>
+                    <span className="text-gray-500 ml-5 mr-1 pl-1 text-[11px]">
+                      MCap
+                    </span>
+                    <span className="text-[#6366F1]">{item.mcap}</span>
+                    <span className="text-gray-500 mr-1 ml-5 pl-1 text-[11px]">
+                      Bonding Curve
+                    </span>
+                    <span className="text-[#6366F1]">{item.condingCurve}</span>
+                    <img
+                      src={Bull}
+                      alt="Bull"
+                      className="h-5 w-5 mr-1 ml-4 cursor-pointer"
+                    />
+                    <img
+                      src={Search}
+                      alt="Search"
+                      className="h-4 w-4 mr-1 cursor-pointer"
+                    />
+                    <img
+                      src={Pill}
+                      alt="Pill"
+                      className="h-4 w-4 mr-1 cursor-pointer"
+                    />
+                    <img
+                      src={Octo}
+                      alt="Octo"
+                      className="h-4 w-4 mr-1 cursor-pointer"
+                    />
+                    <img
+                      src={Globe}
+                      alt="Globe"
+                      className="h-4 w-4 mr-1 cursor-pointer"
+                    />
+                    <img
+                      src={Telegram}
+                      alt="Telegram"
+                      className="h-4 w-4 mr-1 cursor-pointer"
+                    />
+                    <img
+                      src={Twitter}
+                      alt="Twitter"
+                      className="h-4 w-4 mr-1 cursor-pointer"
+                    />
+                    <span className="text-xs font-light text-gray-500 ml-5 mr-5">
+                      {item.timeAgo}
+                    </span>
+                    <div className="absolute top-[95%] left-3 h-[3px] rounded-full w-[70%] bg-gradient-to-r from-fuchsia-600 to-blue-700"></div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="absolute w-full h-full left-0 top-0 bg-gradient-to-t from-gray-950 from-10% pointer-events-none"></div>
           </div>
-          <div className=" ml-7 w-72">
+
+          <div
+            className={` ${
+              !isCollapsed && "mr-20"
+            } c-point:mr-5  w-72 mr-20 ml-10`}
+          >
             <div className="basis-72">
               <div className=" rounded-lg bg-[#130C21] p-6">
                 <div className="flex items-center gap-2">
