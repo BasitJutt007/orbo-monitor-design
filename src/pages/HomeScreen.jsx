@@ -162,10 +162,10 @@ const HomeScreen = ({ isCollapsed, setIsCollapsed, isOverlay }) => {
         <p className="ml-20 text-sm text-gray-500 mt-2">Newest</p>
 
         <div className="bg-[#090117] flex flex-row justify-between w-[100%]">
-          <div className="relative">
+          <div className="relative f-point:w-full">
             <div
-              className=" mt-5 pb-0 overflow-x-auto overflow-y-auto"
-              style={{ maxHeight: "100vh", minWidth: "80%" }}
+              className=" mt-5 pb-0 overflow-x-auto "
+              style={{ maxHeight: "100vh" }}
             >
               <div className="flex flex-col ">
                 {data.map((item) => (
